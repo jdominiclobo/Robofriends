@@ -1,12 +1,14 @@
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
+  // const Card = ({id, name , email}) => {}  // much cleaner code, destructuring as parameters
+  const { id, name, email } = props;
   return (
-    <div className="bg-light-green">
-      <img alt="robot" src="https://robohash.org/test?200x200" />
+    <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+      <img alt="robots" src={`https://robohash.org/${id}?200x200`} />
       <div>
-        <h2>Joel</h2>
-        <p>joel@email.com</p>
+        <h2>{name}</h2>
+        <p>{email}</p>
       </div>
     </div>
   );
